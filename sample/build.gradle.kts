@@ -15,6 +15,13 @@ kotlin {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react:17.0.2-pre.206-kotlin-1.5.10")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:17.0.2-pre.206-kotlin-1.5.10")
+    implementation(project(":lib:material"))
+
+    val wrapper = Libraries.JsWrappers(kotlinVersion)
+
+    implementation(wrapper.react)
+    implementation(wrapper.reactDom)
+
+    implementation(npm("@emotion/react", Libraries.Npm.Emotion.react))
+    implementation(npm("@emotion/styled", Libraries.Npm.Emotion.styled))
 }
