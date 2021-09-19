@@ -8,10 +8,7 @@ import kotlinx.html.Tag
 import kotlinx.html.TagConsumer
 import muikt.material.imports.ButtonBaseActions
 import muikt.material.imports.ButtonBaseClasses
-import react.ElementType
-import react.Props
-import react.RBuilder
-import react.Ref
+import react.*
 import react.dom.FocusEventHandler
 
 fun RBuilder.buttonBase(
@@ -34,7 +31,8 @@ fun <T: Tag> buttonBaseElement(
 
 open class ButtonBaseElementBuilder<T: Tag, C: ButtonBaseClasses> internal constructor(
     factory: (TagConsumer<Unit>) -> T,
-) : MaterialElementBuilder<T, C>(ButtonBase, factory) {
+    type: ComponentType<*> = ButtonBase,
+) : MaterialElementBuilder<T, C>(type, factory) {
     var Tag.onFocusVisible: FocusEventHandler<*>? by attrs
     var Tag.action: Ref<ButtonBaseActions>? by attrs
     var Tag.centerRipple: Boolean by attrs

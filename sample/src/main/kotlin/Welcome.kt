@@ -1,3 +1,4 @@
+import muikt.material.ButtonColor
 import muikt.material.ButtonVariant
 import muikt.material.button
 import react.*
@@ -9,6 +10,7 @@ val Welcome = functionComponent<Props> {
 
     button {
         attrs {
+            color = ButtonColor.primary
             variant = ButtonVariant.contained
             onClick = { count++ }
         }

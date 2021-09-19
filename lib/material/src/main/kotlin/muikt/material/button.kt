@@ -3,10 +3,10 @@ package muikt.material
 import kotlinx.html.BUTTON
 import kotlinx.html.Tag
 import kotlinx.html.TagConsumer
+import muikt.material.imports.Button
 import muikt.material.imports.ButtonClasses
 import react.RBuilder
 import react.ReactNode
-import react.dom.setProp
 
 fun RBuilder.button(
     block: ButtonElementBuilder<BUTTON>.() -> Unit,
@@ -28,7 +28,7 @@ fun <T: Tag> buttonElement(
 
 class ButtonElementBuilder<T: Tag> internal constructor(
     factory: (TagConsumer<Unit>) -> T,
-) : ButtonBaseElementBuilder<T, ButtonClasses>(factory) {
+) : ButtonBaseElementBuilder<T, ButtonClasses>(factory, Button) {
     var Tag.color: ButtonColor? by attrs
     var Tag.disableElevation: Boolean by attrs
     var Tag.disableFocusRipple: Boolean by attrs

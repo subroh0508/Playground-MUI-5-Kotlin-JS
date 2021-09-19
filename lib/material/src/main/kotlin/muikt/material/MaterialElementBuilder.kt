@@ -23,8 +23,8 @@ abstract class MaterialElementBuilder<T: Tag, C: ElementClasses>(
     operator fun <E: Enum<*>> Tag.setValue(
         thisRef: Any?,
         property: KProperty<*>,
-        value: E,
-    ) { setProp(property.name, value.name) }
+        value: E?,
+    ) { setProp(property.name, value?.name) }
 
     fun Tag.classes(block: C.() -> Unit) { set("classes", jso(block)) }
 
