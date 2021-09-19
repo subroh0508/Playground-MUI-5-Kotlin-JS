@@ -1,7 +1,6 @@
 package components
 
 import DomSpec
-import kotlinx.browser.document
 import muikt.material.components.ButtonVariant
 import muikt.material.components.button
 import kotlin.test.Test
@@ -14,7 +13,9 @@ object ButtonSpec : DomSpec {
             +"BUTTON"
         }
     }) { innerHTML ->
+        console.log(innerHTML)
         listOf(
+            "button",
             "MuiButton-root",
             "MuiButton-text",
             "MuiButton-textPrimary",
@@ -32,6 +33,7 @@ object ButtonSpec : DomSpec {
         }
     }) { innerHTML ->
         listOf(
+            "button",
             "MuiButton-root",
             "MuiButton-contained",
             "MuiButton-containedPrimary",
