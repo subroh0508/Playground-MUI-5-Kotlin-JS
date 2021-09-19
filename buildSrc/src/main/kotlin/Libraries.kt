@@ -18,6 +18,9 @@ object Libraries {
         val extensions = "$prefix-extensions:$extensionsVersion"
     }
 
+    private const val jQueryVersion = "1.0.0"
+    const val jQuery = "io.kvision:jquery-kotlin:$jQueryVersion"
+
     object Npm {
         const val react = "17.0.2"
 

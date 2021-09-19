@@ -14,19 +14,7 @@ val Welcome = functionComponent<Props> {
     var count by useState(0)
 
     button {
-        sx {
-            width = 200.px
-            color("text.secondary")
-
-            child("span") {
-                borderColor = Color.coral
-            }
-        }
-        attrs {
-            color = ButtonColor.primary
-            variant = ButtonVariant.contained
-            onClick = { count++ }
-        }
+        attrs.variant = ButtonVariant.contained
 
         +"$count time(s) PUSHED"
     }
