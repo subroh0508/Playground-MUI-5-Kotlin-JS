@@ -1,4 +1,4 @@
-package muikt.material
+package muikt.material.components
 
 import kotlinx.html.BUTTON
 import kotlinx.html.Tag

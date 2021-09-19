@@ -11,6 +11,7 @@ dependencies {
 
     api(wrapper.react)
     api(wrapper.reactDom)
+    api(wrapper.css)
 
     api(npm("@mui/material", Libraries.Npm.MUI.core))
 }

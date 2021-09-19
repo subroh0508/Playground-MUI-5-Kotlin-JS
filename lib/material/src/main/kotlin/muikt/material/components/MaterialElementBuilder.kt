@@ -1,8 +1,11 @@
-package muikt.material
+package muikt.material.components
 
 import kotlinext.js.jso
 import kotlinx.html.Tag
 import kotlinx.html.TagConsumer
+import muikt.material.theme.MuiTheme
+import muikt.material.theme.SxProps
+import muikt.material.theme.SxPropsBuilder
 import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilderImpl
@@ -27,6 +30,11 @@ abstract class MaterialElementBuilder<T: Tag, C: ElementClasses>(
     ) { setProp(property.name, value?.name) }
 
     fun Tag.classes(block: C.() -> Unit) { set("classes", jso(block)) }
+
+    fun sx(block: SxPropsBuilder.() -> Unit) {
+        console.log(SxPropsBuilder().apply(block).props)
+        setProp("sx", SxPropsBuilder().apply(block).props)
+    }
 
     @Suppress("UNCHECKED_CAST", "UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
     override fun create() = createElement(type as ComponentType<DOMProps>, domProps, *childList.toTypedArray())

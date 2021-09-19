@@ -1,4 +1,4 @@
-package muikt.material
+package muikt.material.components
 
 external interface ElementClasses {
     var root: String?

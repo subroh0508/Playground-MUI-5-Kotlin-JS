@@ -3,7 +3,7 @@
 
 package muikt.material.imports
 
-import muikt.material.ElementClasses
+import muikt.material.components.ElementClasses
 import react.*
 import react.dom.FocusEventHandler
 

@@ -1,8 +1,6 @@
-package muikt.material
+package muikt.material.components
 
 import muikt.material.imports.ButtonBase
-import muikt.material.imports.ButtonBaseProps
-import kotlinext.js.jso
 import kotlinx.html.BUTTON
 import kotlinx.html.Tag
 import kotlinx.html.TagConsumer
